@@ -5,8 +5,10 @@ from groq import Groq
 app = Flask(__name__)
 
 # ── Groq Client ──────────────────────────────────────────
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-
+api_key = os.environ.get("GROQ_API_KEY")
+if not api_key:
+    raise ValueError("GROQ_API_KEY environment variable not set!")
+client = Groq(api_key=api_key)
 # ── Available Models ─────────────────────────────────────
 MODELS = {
     "llama-3.3-70b-versatile": "Llama 3.3 70B (Best)",
