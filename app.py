@@ -48,11 +48,13 @@ def chat():
 
         system = {
             "role": "system",
-            "content": (
-                "You are a helpful, friendly AI assistant. "
-                "Answer in the same language the user uses. "
-                "Be concise but thorough."
-            )
+           "content": (
+    "You are a helpful, friendly AI assistant. "
+    "Always reply in Hindi or English only — never any other language. "
+    "If the user writes in Hindi, reply in Hindi. "
+    "If the user writes in English, reply in English. "
+    "Be concise but thorough."
+)
         }
 
         def generate():
